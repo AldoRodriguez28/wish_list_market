@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Pantillas</title>
+    <link rel="icon" href="./img/ico_adn.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./dist/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,500&display=swap" rel="stylesheet">
+    <link rel=stylesheet type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section class="container_main">
+        <div id="sidebar_id" class="sidebar">
+            <div class="container container_vertical">
+                <div id="icon_menu_vertical" class="icon_menu">
+                    <div class="toggle-button text-white side_toggle" onclick="toggleSidebar()" style="color:#fff;">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </div>
+                </div>
+                 <div class="input-group rounded">
+                    <input type="search" class="form-control rounded" placeholder="Buscar plantilla" aria-label="Search" aria-describedby="search-addon" />
+                    <i class="fa fa-search lupa" aria-hidden="true"></i>
+                </div>
+            <!-- Contenido de la barra lateral -->
+            <div class="vertical_container">
+                <p class="title_vertical">Verticales</p>
+                <nav><a href="#">Todas</a></nav>
+                <nav><a href="#">Comercio local</a></nav>
+                <nav class="active_nav"><a href="#">Servicios</a></nav>
+                <nav><a href="#">Servicios para la industria</a></nav>
+                <nav><a href="#">Servicios a domicilio</a></nav>
+                <nav class="disabled"><a href="#">Profesionales</a></nav>
+                <nav ><a href="#">Salud</a></nav>
+                <nav ><a href="#">Comunidad y estilo de vida</a></nav>
+                <nav ><a href="#">Automotriz</a></nav>
+                <nav ><a href="#">Comida</a></nav>
+                <nav ><a href="#">Educación</a></nav>
+                <nav ><a href="#">Legal</a></nav>
+                <nav ><a href="#">Viajes</a></nav>
+                <nav ><a href="#">Eventos</a></nav>
+                <nav ><a href="#">Gimnasios y Deporte</a></nav>
+                <nav ><a href="#">Animales y mascotas</a></nav>
+                <nav ><a href="#">Landing de leads</a></nav>
+        </div>
+            </div>
+        </div>
+        <div id="container-card" class="container-card">
+            <div class="nav_objetivo container">
+                <div id="icon_menu" class="icon_menu">
+                    <div class="toggle-button" onclick="toggleSidebar()">
+                        &#9776;  <!-- Icono del menú (las tres líneas horizontales) -->
+                      </div>
+                </div>
+            </div>
+
+            <!-- WhishList Status -->
+            <div >
+                <div  class=" container container_whisList d-flex justify-content-end">
+                    <span class="d-inline-block whislist_fixed" tabindex="0" data-toggle="tooltip" title="Lista de Recomendaciones" onclick="bucketToggle()">
+                        <i class="fa fa-file-circle-plus"></i>                                
+                    </span>
+                    <span id="wishList-count" class="wishList-count">0</span>
+                </div>
+                <!-- bucket WishList -->
+                <div id="bucket" class="container_bucket">
+                    <div class="bucket-close">
+                        <i class="fa fa-close" onclick="bucketToggle()"></i>
+                    </div>
+                    <div id="container_item_bucket"></div>
+                    <div class="container_button_share">
+                        <button type="button" class="btn btn-primary" onclick="submitBucket()">Guardar</button>
+                       <button type="button" class="btn btn-primary">Compartir</button> 
+        
+                    </div>
+                </div>
+            </div>
+
+            <!-- bucket WishList -->
+
+            <!-- WhishList Status -->
+                <ul class="container_nav nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Todas</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#">Mensajes por Whatsapp</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Llamadas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Formularios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Citas</a>
+                      </li>
+                  </ul>
+
+                  <!-- identificador -->
+                  <div class='container_identifier '>
+                    <div class=" body_identifier">
+                        <label for="identifier">Etiqueta</label>
+                        <input type="text" class="form-control" id="identifier" placeholder="Ingresa un identificador">
+                        <small id="emailHelp" class="form-text text-muted">Ingresa el tag con el que identificaras a tu prospecto</small>
+                      </div>
+                  </div>
+            
+              <div class="container ">
+                  <!-- Contenido card 1 -->
+                <div class="card" style="width: 18rem;">
+                    <div class="ribbon-wrapper">
+                        <div class="ribbon"><p>Comunidad y estilo de vida</p> </div>
+                    </div>
+                    <div class="container_hover">
+                        <!-- numero de paginas -->
+                        <div class="page-icon-content">
+                            <i class="fa fa-file"><span>15</span></i>
+                        </div>
+                        <!-- numero de paginas -->
+                        <img class="card-img-top" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/cccc678f-20d4-40d1-ac64-93c5e07bd567/siteTemplateIcons/AP56WPZ0QsK9AMSgAY4r_vacation_desktop.png" alt="Card image cap">
+                        <!--hover-->
+                        <div class="hover_container">
+                              <!-- RECOMENDACIONES -->
+                                <div id="1213" class="whishList active_whishList" onclick="javascript: testAddToWiishList(this,{name:'AGENCIA INMOBILIARIA ADN WP',Desktop_Thumbnail_Url:'https://irp-cdn.multiscreensite.com/md/dmtmpl/cad1e901-aa18-402e-9172-2c7f7c63864b/siteTemplateIcons/HTcxpDXET06cCzxbzSPa_product_desktop.png'})">
+                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Agregar a recomendaciones">
+                                        <i class="fa fa-heart"></i> <!-- cambio el icono active -->                            
+                                    </span>
+                                </div>
+                                <!-- RECOMENDACIONES -->
+                            <div class="container_button">
+                                <div class="button_seleccionar">
+                                    <a href="" class="button_hover">Seleccinar</a>
+                                </div>
+                                <div class="button_vista_previa">
+                                    <a href="" class="button_hover">Vista Previa</a>
+                                </div>
+                            </div>
+                              <!-- icono de descarga -->
+                              <div class="button_download" onclick="javascript:alert('descargando ...')">
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Descargar plantilla">
+                                    <i class="fa fa-download"></i>                                
+                                </span>
+                            </div>
+                            <!-- icono de descarga -->
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5>AGENCIA INMOBILIARIA ADN LEADS</h5>
+                        <div  class="container_objetivo">
+                                <p class="objetivo">Objetivo</p>
+                                <span class="badge_style badge rounded-pill bg-primary">Mensajes por Whatsapp</span>
+                            </div>
+                               
+                    </div>
+                </div>
+
+                 <!-- Contenido card 2 -->
+                 <div class="card" style="width: 18rem;">
+                    <div class="ribbon-wrapper">
+                        <div class="ribbon">Servicios para la industria</div>
+                    </div>
+                    <div class="container_hover">
+                        <!-- numero de paginas -->
+                        <div class="page-icon-content">
+                            <i class="fa fa-file"><span>15</span></i>
+                        </div>
+                        <!-- numero de paginas -->
+                        <img class="card-img-top" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/cad1e901-aa18-402e-9172-2c7f7c63864b/siteTemplateIcons/HTcxpDXET06cCzxbzSPa_product_desktop.png" alt="Card image cap">
+                        <!--hover-->
+                        <div class="hover_container">
+                              <!-- RECOMENDACIONES -->
+                                <div id="1213" class="whishList active_whishList" onclick="javascript: testAddToWiishList(this,{name:'AGENCIA INMOBILIARIA ADN WP',Desktop_Thumbnail_Url:'https://irp-cdn.multiscreensite.com/md/dmtmpl/cad1e901-aa18-402e-9172-2c7f7c63864b/siteTemplateIcons/HTcxpDXET06cCzxbzSPa_product_desktop.png'})">
+                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Agregar a recomendaciones">
+                                        <i class="fa fa-heart"></i> <!-- cambio el icono active -->                            
+                                    </span>
+                                </div>
+                                <!-- RECOMENDACIONES -->
+                            <div class="container_button">
+                                <div class="button_seleccionar">
+                                    <a href="" class="button_hover">Seleccinar</a>
+                                </div>
+                                <div class="button_vista_previa">
+                                    <a href="" class="button_hover">Vista Previa</a>
+                                </div>
+                            </div>
+                              <!-- icono de descarga -->
+                              <div class="button_download" onclick="javascript:alert('descargando ...')">
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Descargar plantilla">
+                                    <i class="fa fa-download"></i>                                
+                                </span>
+                            </div>
+                            <!-- icono de descarga -->
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5>AGENCIA INMOBILIARIA ADN WP</h5>
+                        <div class="container_objetivo">
+                            <p class="objetivo">Objetivo</p>
+                            <span class="badge_style badge rounded-pill bg-primary">Llamadas</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Contenido card 3 -->
+                 <div class="card" style="width: 18rem;">
+                    <div class="ribbon-wrapper">
+                        <div class="ribbon">Servicios a domicilio</div>
+                    </div>
+                    <div class="container_hover">
+                          <!-- numero de paginas -->
+                          <div class="page-icon-content">
+                            <i class="fa fa-file"><span>4</span></i>
+                        </div>
+                        <!-- numero de paginas -->
+
+                        <img class="card-img-top" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png" alt="Card image cap">
+                        <!--hover-->
+                        <div class="hover_container">
+                            <!-- RECOMENDACIONES -->
+                            <div id="1214" class="whishList" onclick="testAddToWiishList(this,{name:'AGENCIA INMOBILIARIA ADN LLAMADAS', Desktop_Thumbnail_Url:'https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png'})">
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Agregar a recomendaciones">
+                                    <i class="fa fa-heart-o"></i>                                
+                                </span>
+                            </div>
+                            <!-- RECOMENDACIONES -->
+                            <div class="container_button">
+                                <div class="button_seleccionar">
+                                    <a href="" class="button_hover">Seleccinar</a>
+                                </div>
+                                <div class="button_vista_previa">
+                                    <a href="" class="button_hover">Vista Previa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div>
+                            <h5> AGENCIA INMOBILIARIA ADN LLAMADAS</h5>
+                        </div>
+                        <div class="container_objetivo">
+                            <p class="objetivo">Objetivo</p>
+                            <span class="badge_style badge rounded-pill bg-primary">Formularios</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Contenido card 4 -->
+                 <div class="card" style="width: 18rem;">
+                    <div class="ribbon-wrapper">
+                        <div class="ribbon">Automotriz</div>
+                    </div>
+                    <div class="container_hover">
+                            <!-- numero de paginas -->
+                            <div class="page-icon-content">
+                                <i class="fa fa-file"><span>29</span></i>
+                            </div>
+                            <!-- numero de paginas -->
+                        <img class="card-img-top" src="https://irp.cdn-website.com/md/dmtmpl/68c428a6-ec0d-4f8f-8247-ee4b0a70ec9d/siteTemplateIcons/fzgEkAoQRkKBTMansMZz_Bicycle%20blog%20Desktop.png" alt="Card image cap">
+                        <!--hover-->
+                        <div class="hover_container">
+                             <!-- RECOMENDACIONES -->
+                             <div id="1215" class="whishList" onclick="testAddToWiishList(this,{name:'AGENCIA INMOBILIARIA ADN LLAMADAS', Desktop_Thumbnail_Url:'https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png'})">
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Agregar a recomendaciones">
+                                    <i class="fa fa-heart-o"></i>                                
+                                </span>
+                            </div>
+                            <!-- RECOMENDACIONES -->
+                            <div class="container_button">
+                                <div class="button_seleccionar">
+                                    <a href="" class="button_hover">Seleccinar</a>
+                                </div>
+                                <div class="button_vista_previa">
+                                    <a href="" class="button_hover">Vista Previa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5>My Bicycle Blog</h5>
+                        <div class="container_objetivo">
+                            <p class="objetivo">Objetivo</p>
+                            <span class="badge_style badge rounded-pill bg-primary">Whatsapp</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contenido card 5 -->
+                <div class="card" style="width: 18rem;">
+                    <div class="ribbon-wrapper">
+                        <div class="ribbon"><p>Landing de leads</p> </div>
+                    </div>
+                    <div class="container_hover">
+                             <!-- numero de paginas -->
+                             <div class="page-icon-content">
+                                <i class="fa fa-file"><span>1</span></i>
+                             </div>
+                            <div class="container_multi_page">
+                                    <img  src="./img/multi-page.png" alt="">
+                                    <span>88</span>
+                            </div>
+                            <!-- numero de paginas -->
+                        <img class="card-img-top" src="https://irp.cdn-website.com/md/dmtmpl/da4016a7-4cb3-4d24-b6ec-6f2ef436dbfe/siteTemplateIcons/alKecN3rThKVf6zINI7n_lifestyle_desktop.png" alt="Card image cap">
+                        <!--hover-->
+                        <div class="hover_container">
+                             <!-- RECOMENDACIONES -->
+                             <div id="1216" class="whishList" onclick="testAddToWiishList(this,{name:'AGENCIA INMOBILIARIA ADN LLAMADAS', Desktop_Thumbnail_Url:'https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png'})">
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Agregar a recomendaciones">
+                                    <i class="fa fa-heart-o"></i>                                
+                                </span>
+                            </div>
+                            <!-- RECOMENDACIONES -->
+                            <div class="container_button">
+                                <div class="button_seleccionar">
+                                    <a href="" class="button_hover">Seleccinar</a>
+                                </div>
+                                <div class="button_vista_previa">
+                                    <a href="" class="button_hover">Vista Previa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5>LifeStyle</h5>
+                        <div class="container_objetivo">
+                            <p class="objetivo">Objetivo</p>
+                            <span class="badge_style badge rounded-pill bg-primary">Citas</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+           </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/d792f04858.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function toggleSidebar() {
+          var sidebar = document.getElementById('sidebar_id');
+          sidebar.classList.toggle('open'); // Agrega o remueve la clase 'open'
+          var icon_menu = document.getElementById('icon_menu');
+          icon_menu.classList.toggle('open'); // Agrega o remueve la clase 'open'
+          var icon_menu_vertical = document.getElementById('icon_menu_vertical');
+          icon_menu_vertical.classList.toggle('open'); // Agrega o remueve la clase 'open'
+        }
+     
+      </script>    
+      <script src="./js/index.js"></script>
+
+</body>
+</html>

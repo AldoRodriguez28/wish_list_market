@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plantillas | Recomendaciones </title>
+        <link rel="icon" href="./img/ico_adn.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="./dist/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,500&display=swap" rel="stylesheet">
+        <link rel=stylesheet type="text/css" href="./css/style_thank_u_page.css">
+    </head>
+    <body>
+        <nav class="header">
+            <div class="img_header">
+                <img width="150px" src="./img//logo adn.png" alt="logo">
+            </div>
+          
+
+        </nav>
+        
+        <div class="container less_top">
+            <!-- <div class="alert alert-warning fade show container_alert" role="alert">
+                <div class="icon_alert">
+                     <i class="fa fa-rotate-left"></i> 
+                </div>
+                <div class="alert_body">
+                    <br>
+                    <strong>Tienes una actualización!</strong> Tu lista de recomendaciones se ha actualizado, actualiza tu pagina y selecciona tu plantilla preferida!!!.
+                </div>
+                <br>
+            </div>
+            <button class="btn button_reload" onclick="javascript: window.location.reload()">
+                <i class="fa fa-rotate-left"></i> haz click aquí para refrescar la pagina
+              </button>           
+               <br><br> -->
+            <header>
+                <i class="fa fa-heart-o"></i> 
+                <h1>¡ Mis recomendaciones !</h1>
+            </header>
+            <main class="">
+             <!--  <h2>Lista de recomendaciones</h2>  -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vista previa</th>
+                            <th>Plantilla</th>
+                            <th>Acciones</th>
+    
+                        </tr>
+                    </thead>
+                    <tbody id="product-list">
+                        <!-- Aquí se agregarán los productos dinámicamente -->
+                        <tr>
+                            <td><img width="124px" height="auto" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png" alt=""></td>
+                            <td> <p>AGENCIA INMOBILIARIA ADN LLAMADAS</p></td>
+                            <td class="td_acciones">    
+                                <div class="container_acciones">
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Vista previa</button> 
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Seleccionar</button> 
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img width="124px" height="auto" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png" alt=""></td>
+                            <td> <p>AGENCIA INMOBILIARIA ADN LLAMADAS</p></td>
+                            <td class="td_acciones">    
+                                <div class="container_acciones">
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Vista previa</button> 
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Seleccionar</button> 
+                                </div>
+                            </td>
+                        </tr>
+                      
+                        <tr>
+                            <td><img width="124px" height="auto" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png" alt=""></td>
+                            <td> <p>AGENCIA INMOBILIARIA ADN LLAMADAS</p></td>
+                            <td class="td_acciones">    
+                                <div class="container_acciones">
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Vista previa</button> 
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Seleccionar</button> 
+                                </div>
+                            </td>
+                        </tr>
+                      
+                        <tr>
+                            <td><img width="124px" height="auto" src="https://irp-cdn.multiscreensite.com/md/dmtmpl/dbe02015-05ea-4c06-b80f-217020b31e4a/siteTemplateIcons/JP4Wm7oYQqZaijr4a6JD_barber_shop_desktop.png" alt=""></td>
+                            <td> <p>AGENCIA INMOBILIARIA ADN LLAMADAS</p></td>
+                            <td class="td_acciones">    
+                                <div class="container_acciones">
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Vista previa</button> 
+                                    <button type="button" class="btn btn-primary button_thank_u_table">Seleccionar</button> 
+                                </div>
+                            </td>
+                        </tr>
+                      
+                      
+                    </tbody>
+                </table>
+            </main>
+            
+            <div class="container_footer">
+                <footer>
+                   
+                    <div class="title">Link a compartir</div>
+                    <div class="container_form_link">
+                        <form id="urlForm">
+                            <input type="text" id="urlInput" placeholder="Ingrese la URL a compartir" value="http://127.0.0.1:5501/" >
+                            <button type="button" id="copyButton" class="btn btn-primary button_thank_u_table">Copiar URL</button>
+                        </form>
+                    </div>
+                </footer>
+            </div>
+            <br>
+        </div>
+        
+        <!-- <script src="./js/index.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            window.addEventListener('scroll', function() {
+                var nav = document.querySelector('.header');
+                var top = window.pageYOffset || document.documentElement.scrollTop;
+        
+                if (top > 45) {
+                    nav.classList.add('fixed');
+                } else {
+                    nav.classList.remove('fixed');
+                }
+        
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+                var urlInput = document.getElementById('urlInput');
+                var copyButton = document.getElementById('copyButton');
+            
+                copyButton.addEventListener('click', function() {
+                    urlInput.select();
+                    document.execCommand('copy');
+                    Swal.fire({
+                        title: "Copiado",
+                        text: 'URL copiada al portapapeles: ' + urlInput.value,
+                        icon: "success"
+                      });
+                });
+            });
+        </script>
+    </body>
+</html>

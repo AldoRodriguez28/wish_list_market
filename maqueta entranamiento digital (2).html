@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Maqueta HTML</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    /* Estilos personalizados */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 767px) {
+      /* Estilos específicos para dispositivos móviles */
+      .column {
+        flex: auto;
+        width: 100%;
+      }
+    }
+
+    /* Estilos personalizados para el datepicker */
+    #datepicker {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      text-align: center; /* Centra horizontalmente el contenido */
+    }
+
+    #datepicker input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    #datepicker .ui-datepicker-trigger {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <!-- Lado Izquierdo -->
+      <div class="form-group">
+        <label for="datepicker">Elige una fecha:</label>
+        <div id="datepicker">
+          <input type="text" id="datepicker-input" class="form-control" readonly>
+          <span class="ui-datepicker-trigger"><i class="fas fa-calendar-alt"></i></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="servicios">Selecciona un servicio:</label>
+        <select id="servicios" class="form-control">
+          <option value="">Selecciona un servicio</option>
+          <option value="servicio1">Servicio 1</option>
+          <option value="servicio2">Servicio 2</option>
+          <option value="servicio3">Servicio 3</option>
+        </select>
+        <div id="servicios-error" class="error-message"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="horarios">Selecciona un horario:</label>
+        <select id="horarios" class="form-control">
+          <option value="">Selecciona un horario</option>
+          <option value="horario1">Horario 1</option>
+          <option value="horario2">Horario 2</option>
+          <option value="horario3">Horario 3</option>
+        </select>
+        <div id="horarios-error" class="error-message"></div>
+      </div>
+
+      <button id="guardar" class="btn btn-primary">Guardar</button>
+      <button id="reagendar" class="btn btn-secondary">Reagendar</button>
+
+      <div id="leyenda-cita" class="mt-3"></div>
+    </div>
+
+    <div class="column">
+      <!-- Lado Derecho -->
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" class="form-control" readonly>
+        <div id="nombre-error" class="error-message"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="text" id="correo" class="form-control" readonly>
+        <div id="correo-error" class="error-message"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" class="form-control" readonly>
+        <div id="telefono-error" class="error-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      // Obtener parámetro de la URL para determinar si es una nueva cita
+      const urlParams = new URLSearchParams(window.location.search);
+      const isNewCita = urlParams.get('cita') === 'nueva';
+
+      // Función para cargar los datos de una cita existente
+      function cargarCitaExistente() {
+        // Simulación de datos de una cita existente
+        const citaExistente = {
+          fecha: '2023-05-31',
+          servicio: 'servicio2',
+          horario: 'horario3',
+          nombre: 'Juan Pérez',
+          correo: 'juan@example.com',
+          telefono: '555-123456789'
+        };
+
+        // Mostrar los datos de la cita existente
+        $('#datepicker-input').val(citaExistente.fecha);
+        $('#servicios').val(citaExistente.servicio);
+        $('#horarios').val(citaExistente.horario);
+        $('#nombre').val(citaExistente.nombre);
+        $('#correo').val(citaExistente.correo);
+        $('#telefono').val(citaExistente.telefono);
+
+        // Desactivar los campos para edición
+        $('#datepicker-input').prop('readonly', true);
+        $('#servicios').prop('disabled', true);
+        $('#horarios').prop('disabled', true);
+
+        // Mostrar leyenda de cita existente
+        $('#leyenda-cita').text('Ya tienes una cita programada para el ' + citaExistente.fecha + '.');
+        $('#reagendar').show();
+        $('#guardar').hide();
+      }
+
+      // Cargar los datos según el tipo de cita
+      if (isNewCita) {
+        // Nueva cita
+        $('#leyenda-cita').text('Nueva cita');
+        $('#reagendar').hide();
+        $('#guardar').show();
+      } else {
+        // Cita existente
+        cargarCitaExistente();
+      }
+
+      // Configuración del datepicker
+      $('#datepicker').datepicker({
+        dateFormat: 'yy-mm-dd',
+        minDate: 0,
+        showOn: 'both',
+        buttonText: '<i class="fas fa-calendar-alt"></i>',
+        beforeShowDay: function(date) {
+          // Deshabilitar fechas pasadas
+          var currentDate = new Date();
+          return [date >= currentDate];
+        },
+        onSelect: function(dateText) {
+          // Guardar la fecha seleccionada en un input oculto
+          $('#datepicker-input-hidden').val(dateText);
+        }
+      });
+
+      // Evento click del botón "Reagendar"
+      $('#reagendar').click(function() {
+        // Habilitar los campos de fecha, servicio y horario para reagendar
+        $('#datepicker-input').prop('readonly', false);
+        $('#servicios').prop('disabled', false);
+        $('#horarios').prop('disabled', false);
+
+        // Limpiar los valores de los campos
+        $('#datepicker-input').val('');
+        $('#servicios').val('');
+        $('#horarios').val('');
+
+        // Ocultar el botón de reagendar
+        $(this).hide();
+      });
+
+      // Evento click del botón "Guardar"
+      $('#guardar').click(function() {
+        // Obtener los valores de los campos
+        var servicio = $('#servicios').val();
+        var horario = $('#horarios').val();
+        var nombre = $('#nombre').val();
+        var correo = $('#correo').val();
+        var telefono = $('#telefono').val();
+
+        // Limpiar los mensajes de error
+        $('.error-message').text('');
+
+        // Validar que todos los campos estén completos
+        var isValid = true;
+
+        if (servicio === '') {
+          $('#servicios-error').text('Por favor, selecciona un servicio.');
+          isValid = false;
+        }
+
+        if (horario === '') {
+          $('#horarios-error').text('Por favor, selecciona un horario.');
+          isValid = false;
+        }
+
+        if (nombre === '') {
+          $('#nombre-error').text('Por favor, ingresa tu nombre.');
+          isValid = false;
+        }
+
+        if (correo === '') {
+          $('#correo-error').text('Por favor, ingresa tu correo.');
+          isValid = false;
+        }
+
+        if (telefono === '') {
+          $('#telefono-error').text('Por favor, ingresa tu teléfono.');
+          isValid = false;
+        }
+
+        // Si todos los campos están completos, realizar la acción de guardar
+        if (isValid) {
+          // Aquí puedes agregar el código para guardar los datos
+          alert('¡Datos guardados!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
